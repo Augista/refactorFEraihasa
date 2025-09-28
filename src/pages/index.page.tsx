@@ -34,9 +34,6 @@ export default function Home() {
 
   return (
     <Layout withNavbar={true} withFooter={true}>
-          <div className="p-8 text-4xl text-white bg-red-500">
-      Test Tailwind - Ini harus merah dengan text putih
-    </div>
       <SEO title='Home' />
       <PromoPopup />
       <main className='scroll-smooth overflow-hidden bg-[#fff]'>

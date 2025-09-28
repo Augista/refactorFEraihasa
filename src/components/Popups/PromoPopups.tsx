@@ -19,10 +19,7 @@ import { DANGER_TOAST, showToast, SUCCESS_TOAST, WARNING_TOAST } from '@/compone
 
 
 const PromoPopup : React.FC = () => {
-  // const fpPromise = FingerprintJS.load();
-  // const fp = await fpPromise;
-  // const result = await fp.get();
-  // const deviceId = result.visitorId;
+  
   const [deviceId, setDeviceId] = useState<string | null>(null);
 
   useEffect(() => {

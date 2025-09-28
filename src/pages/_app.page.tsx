@@ -1,5 +1,6 @@
 import '@/styles/globals.css'    
 import '@/styles/nprogress.css';
+import "aos/dist/aos.css";
 
 import { HeroUIProvider } from '@heroui/react';
 import {

@@ -39,8 +39,9 @@ const nextConfig: NextConfig = {
   deviceSizes: [640, 768, 1024, 1280, 1600],
   imageSizes: [16, 32, 48, 64, 96],
   formats: ['image/webp'],
+  qualities: [75, 100],
 },
-  pageExtensions: ["page.tsx", "page.ts", "api.ts",".tsx", ".ts", ".js", ".jsx"],
+  pageExtensions: ["page.tsx", "page.ts", "api.ts"],
   reactStrictMode: true,
   swcMinify: true,
 

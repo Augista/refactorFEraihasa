@@ -1,25 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* @import url('../styles/font/Poppins/https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
-@font-face {
-  font-family: 'Popins';
-  src: url('../styles/font/Poppins/font/Poppins/Poppins-Black.ttf') format('opentype');
-} */
-/* body {
-  font-family: 'Poppins', sans-serif; */
-/* @font-face {
-    font-family: 'Poppins', sans-serif;
-    font-style: normal italic;
-    font-weight: normal bold 300 900;
-    font-display: optional;
-    src: local('../styles/font/Poppins/Poppins'),
-      url('../styles/font/Poppins//fonts/Poppins-VariableFont_wght.woff2') format('woff2');
-  } */
-/* } */
 
-/* src/styles/font/Poppins/Poppins-Black.eot */
 
 @font-face {
   font-family: 'Poppins';

@@ -4,7 +4,7 @@ import 'swiper/css/pagination';
 import 'aos/dist/aos.css';
 
 import { Disclosure, Transition } from '@headlessui/react';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery,keepPreviousData, } from '@tanstack/react-query';
 import Aos from 'aos';
 import React, { useMemo, useState } from 'react';
 import { CiFilter } from 'react-icons/ci';
@@ -67,7 +67,7 @@ export default function InfoBeasiswa() {
       });
       return res.data;
     },
-    keepPreviousData: true,
+    placeholderData: keepPreviousData,
   });
 
   const filteredData = useMemo(() => {
@@ -166,16 +166,16 @@ export default function InfoBeasiswa() {
     <Layout withNavbar={true} withFooter={true}>
       <SEO title='Info Beasiswa' />
       <main className='overflow-hidden'>
-        <section className='hero mt-20 pt-20 lg:pt-0'>
+        <section className='pt-20 mt-20 hero lg:pt-0'>
           <div className='grid grid-flow-row md:grid-cols-12 '>
-            <div className='md:col-span-4 order-1 md:order-none grid place-items-center lg:block'>
+            <div className='grid order-1 md:col-span-4 md:order-none place-items-center lg:block'>
               <NextImage
                 src={'/images/infobeasiswa/hero.png'}
                 width={511}
                 height={352}
                 quality={100}
                 alt='Heira Raih Asa'
-                className='w-full hidden md:block'
+                className='hidden w-full md:block'
                 data-aos='fade-right'
                 data-aos-delay='400'
               />
@@ -190,8 +190,8 @@ export default function InfoBeasiswa() {
                 data-aos-delay='400'
               />
             </div>
-            <div className='md:col-span-8 grid place-items-center grid-flow-row mb-10 lg:mb-0'>
-              <div className='flex items-center flex-col gap-2 w-full px-4 md:w-auto'>
+            <div className='grid grid-flow-row mb-10 md:col-span-8 place-items-center lg:mb-0'>
+              <div className='flex flex-col items-center w-full gap-2 px-4 md:w-auto'>
                 <h3
                   data-aos='zoom-in'
                   className='font-bold text-[28px] lg:text-6xl bg-[#E94759] py-4 w-full lg:w-auto text-center lg:px-8 text-shadow-bg text-[#F5F5F5]'
@@ -213,28 +213,28 @@ export default function InfoBeasiswa() {
             <VelocityScroll
               text=' Rekomendasi Beasiswa Untukmu! '
               default_velocity={2}
-              className='text-xl sm:text-2xl lg:text-5xl font-bold text-white whitespace-nowrap opacity-60'
+              className='text-xl font-bold text-white sm:text-2xl lg:text-5xl whitespace-nowrap opacity-60'
             />
           </div>
           <div className='flex absolute top-0 -rotate-1 md:rotate-1 bg-gradient-to-r from-[#FB991A] to-[#C0172A] w-full py-7 justify-center gap-8 shadow-[0_62px_26px_0_rgba(0,0,0,0.20)]'>
             <VelocityScroll
               text=' Rekomendasi Beasiswa Untukmu! '
               default_velocity={2}
-              className='text-xl sm:text-2xl lg:text-5xl font-bold text-white whitespace-nowrap opacity-60'
+              className='text-xl font-bold text-white sm:text-2xl lg:text-5xl whitespace-nowrap opacity-60'
             />
             <VelocityScroll
               text=' Rekomendasi Beasiswa Untukmu! '
               default_velocity={2}
-              className='text-xl sm:text-2xl lg:text-5xl font-bold text-white whitespace-nowrap opacity-80'
+              className='text-xl font-bold text-white sm:text-2xl lg:text-5xl whitespace-nowrap opacity-80'
             />
             <VelocityScroll
               text=' Rekomendasi Beasiswa Untukmu! '
               default_velocity={2}
-              className='text-xl sm:text-2xl lg:text-5xl font-bold text-white whitespace-nowrap opacity-60'
+              className='text-xl font-bold text-white sm:text-2xl lg:text-5xl whitespace-nowrap opacity-60'
             />
           </div>
 
-          <div className='relative mt-12 lg:mt-0 top-1/2 lg:-translate-y-1/3 right-1/2 translate-x-1/2'>
+          <div className='relative mt-12 translate-x-1/2 lg:mt-0 top-1/2 lg:-translate-y-1/3 right-1/2'>
             <Swiper
               style={{}}
               spaceBetween={48}
@@ -271,7 +271,7 @@ export default function InfoBeasiswa() {
                 <div className='swiper-pagination'></div>
               </div>
             </Swiper>
-            <div className='flex max-w-6xl w-full px-12 lg:px-0 justify-between absolute bottom-1 lg:bottom-auto lg:top-1/2 right-1/2 translate-x-1/2 z-30'>
+            <div className='absolute z-30 flex justify-between w-full max-w-6xl px-12 translate-x-1/2 lg:px-0 bottom-1 lg:bottom-auto lg:top-1/2 right-1/2'>
               <div className='prev text-lg lg:text-3xl bg-[#E94759] text-white p-4 rounded-[50px] cursor-pointer'>
                 <FaArrowLeft />
               </div>
@@ -287,13 +287,13 @@ export default function InfoBeasiswa() {
             className='w-full text-center bg-[#E47F1A] py-3 lg:py-5 shadow-header'
             data-aos='fade-up'
           >
-            <h2 className='text-white text-xl lg:text-5xl font-bold text-shadow-xl'>
+            <h2 className='text-xl font-bold text-white lg:text-5xl text-shadow-xl'>
               Semua Beasiswa
             </h2>
           </div>
 
           <div className='grid grid-cols-12 mt-12 lg:mt-[104px]'>
-            <div className='col-span-3 gird place-items-center hidden lg:block'>
+            <div className='hidden col-span-3 gird place-items-center lg:block'>
               <h6 className='text-[28px] font-semibold' data-aos='fade-up'>
                 Filter Beasiswa
               </h6>
@@ -316,7 +316,7 @@ export default function InfoBeasiswa() {
                                   : ''
                               }  text-[#1C1C1C] h-5 w-5`}
                             />
-                            <span className=' text-lg'>{e.title}</span>
+                            <span className='text-lg '>{e.title}</span>
                           </Disclosure.Button>
                           <Transition
                             enter='transition duration-100 ease-out'
@@ -329,7 +329,7 @@ export default function InfoBeasiswa() {
                             <Disclosure.Panel className='flex flex-col ml-4'>
                               {e.btaction?.map((item, index) => (
                                 <div
-                                  className='p-2 flex gap-3 items-center'
+                                  className='flex items-center gap-3 p-2'
                                   key={index}
                                 >
                                   <input
@@ -354,7 +354,7 @@ export default function InfoBeasiswa() {
             </div>
 
             <div className='col-span-12 lg:col-span-9 ' data-aos='fade-up'>
-              <div className='header w-full flex flex-col lg:flex-row items-start justify-between'>
+              <div className='flex flex-col items-start justify-between w-full header lg:flex-row'>
                 <div className='flex items-center w-full'>
                   <input
                     type='text'
@@ -367,7 +367,7 @@ export default function InfoBeasiswa() {
                     }
                   />
                 </div>
-                <div className='w-full mt-3 lg:mt-0 flex items-start gap-4'>
+                <div className='flex items-start w-full gap-4 mt-3 lg:mt-0'>
                   <Disclosure as='div' className={'xl:w-full w-[294px]'}>
                     {({ open }) => (
                       <>
@@ -393,9 +393,9 @@ export default function InfoBeasiswa() {
                           leaveFrom='transform scale-100 opacity-100'
                           leaveTo='transform scale-95 opacity-0'
                         >
-                          <Disclosure.Panel className='flex flex-col mt-4 relative xl:absolute z-30 bg-white w-full'>
+                          <Disclosure.Panel className='relative z-30 flex flex-col w-full mt-4 bg-white xl:absolute'>
                             <div className='px-3 py-2 flex flex-col gap-2 border border-[#1B7691] rounded-md'>
-                              <div className='flex gap-2 items-center '>
+                              <div className='flex items-center gap-2 '>
                                 <input
                                   type='checkbox'
                                   name=''
@@ -407,7 +407,7 @@ export default function InfoBeasiswa() {
                                 />
                                 <label htmlFor=''>Deadline Terdekat</label>
                               </div>
-                              <div className='flex gap-2 items-center '>
+                              <div className='flex items-center gap-2 '>
                                 <input
                                   type='checkbox'
                                   name=''
@@ -419,7 +419,7 @@ export default function InfoBeasiswa() {
                                 />
                                 <label htmlFor=''>Deadline Paling Lama</label>
                               </div>
-                              <div className='flex gap-2 items-center '>
+                              <div className='flex items-center gap-2 '>
                                 <input
                                   type='checkbox'
                                   name=''
@@ -449,13 +449,13 @@ export default function InfoBeasiswa() {
 </div>
 </div>
 
-<div className='toggle-wrapper flex-col mt-4 gap-4'>
+<div className='flex-col gap-4 mt-4 toggle-wrapper'>
   <p className='text-sm'>
     Menampilkan {paginatedData?.length || 0} dari {totalFiltered}
   </p>
 
-  <div className='gap-2 hidden lg:flex'>
-    <div className='filtered-wrapper flex gap-4'>
+  <div className='hidden gap-2 lg:flex'>
+    <div className='flex gap-4 filtered-wrapper'>
       {filters.jenis && (
         <div className='border border-[#1B7691] text-[#1B7691] px-3 py-1 rounded-md flex gap-2 items-center'>
           <p>{filters.jenis}</p>
@@ -494,7 +494,7 @@ export default function InfoBeasiswa() {
 </div>
 
 {paginatedData.length > 0 ? (
-  <div className='grid lg:grid-cols-2 gap-8 mt-5'>
+  <div className='grid gap-8 mt-5 lg:grid-cols-2'>
     {paginatedData.map((detailbeasiswa, id) => (
       <BeasiswaCard key={id} detailbeasiswa={detailbeasiswa} />
     ))}
@@ -504,7 +504,7 @@ export default function InfoBeasiswa() {
 )}
 
 {/* Pagination */}
-<div className='flex justify-center items-center gap-4 py-8'>
+<div className='flex items-center justify-center gap-4 py-8'>
   <button
     onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
     disabled={currentPage === 1}

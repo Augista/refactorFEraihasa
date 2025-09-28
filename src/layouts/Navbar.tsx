@@ -81,7 +81,7 @@ export default function Navbar() {
 
   return (
     <header className='fixed top-0 z-[100] w-full bg-primary-white shadow-xl font-primary'>
-      <div className='flex flex-row items-center h-24 md:h-20 justify-between layout'>
+      <div className='flex flex-row items-center justify-between h-24 md:h-20 layout'>
         <UnstyledLink
           href='/'
           className='flex flex-row items-center gap-2 md:gap-4'
@@ -97,7 +97,7 @@ export default function Navbar() {
 
         {/* Desktop Navbar */}
         <nav className='hidden md:block'>
-          <ul className='flex flex-row gap-6 justify-between items-center text-base'>
+          <ul className='flex flex-row items-center justify-between gap-6 text-base'>
             <li>
               <UnstyledLink
                 href='/'
@@ -109,7 +109,7 @@ export default function Navbar() {
               </UnstyledLink>
             </li>
             <li>
-              <Menu className='static flex z-50 ' as='div'>
+              <Menu className='static z-50 flex ' as='div'>
                 <Menu.Button>
                   {({ open }) => (
                     <Typography
@@ -142,7 +142,7 @@ export default function Navbar() {
                       'absolute w-screen h-auto left-0 mt-12 z-50 bg-white shadow-xl focus:outline-none'
                     )}
                   >
-                    <div className='flex flex-row gap-6 layout py-6'>
+                    <div className='flex flex-row gap-6 py-6 layout'>
                       <div className='flex flex-col gap-1.5 w-fit text-start'>
                         {programs.map(({ name }, index) => (
                           <Button
@@ -188,7 +188,7 @@ export default function Navbar() {
 
                       <span className='w-0.5 h-auto bg-gray-200'></span>
 
-                      <div className='overflow-x-auto w-auto h-auto rounded-xl'>
+                      <div className='w-auto h-auto overflow-x-auto rounded-xl'>
                         <div className='grid grid-flow-col gap-4'>
                           {/* {scholarshipOpen &&
                             SCHOLARSHIP_FAIR_CARD_DATA.map((e, index) => (
@@ -294,7 +294,7 @@ export default function Navbar() {
                     {() => (
                       <div className='flex w-full h-[42px] py-2 px-4 justify-center items-center gap-2 text-primary-bluegreen cursor-pointer'>
                         <HiUserCircle className='w-6 h-6' />
-                        <span className='font-semibold text-lg'>
+                        <span className='text-lg font-semibold'>
                           Hai, {user?.name}!
                         </span>
                       </div>
@@ -314,12 +314,12 @@ export default function Navbar() {
                         <li>
                           <UnstyledLink
                             href='/admin'
-                            className='flex hover:bg-gray-100 rounded-lg hover:text-primary-bluegreen'
+                            className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
                           >
                             <Typography
                               color='inline'
                               variant='bt'
-                              className=' py-4 pl-4'
+                              className='py-4 pl-4 '
                             >
                               Dashboard
                             </Typography>
@@ -331,12 +331,12 @@ export default function Navbar() {
                         <li>
                           <UnstyledLink
                             href='/dashboard'
-                            className='flex hover:bg-gray-100 rounded-lg hover:text-primary-bluegreen'
+                            className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
                           >
                             <Typography
                               color='inline'
                               variant='bt'
-                              className=' py-4 pl-4'
+                              className='py-4 pl-4 '
                             >
                               Dashboard
                             </Typography>
@@ -346,13 +346,13 @@ export default function Navbar() {
 
                       <Menu.Item
                         as='button'
-                        className='flex hover:bg-gray-100 rounded-lg hover:text-primary-bluegreen'
+                        className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
                         onClick={handleLogout}
                       >
                         <Typography
                           color='inline'
                           variant='bt'
-                          className=' py-4 pl-4'
+                          className='py-4 pl-4 '
                         >
                           Log Out
                         </Typography>
@@ -400,23 +400,23 @@ export default function Navbar() {
 
         <nav className='flex-1 w-full'>
           <ul className='space-y-8'>
-            <div className='space-y-2 w-full text-base '>
+            <div className='w-full space-y-2 text-base '>
               <li>
                 <UnstyledLink
                   href='/'
-                  className='flex hover:bg-gray-100 rounded-lg hover:text-primary-bluegreen'
+                  className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
                 >
                   <Typography
                     color='inline'
                     variant='bt'
-                    className=' py-4 pl-4'
+                    className='py-4 pl-4 '
                   >
                     Home
                   </Typography>
                 </UnstyledLink>
               </li>
               <li>
-                <Menu className='static flex z-10' as='div'>
+                <Menu className='static z-10 flex' as='div'>
                   <Menu.Button
                     className={clsxm(
                       `py-4 pl-4 w-full hover:bg-gray-100 rounded-lg hover:text-primary-bluegreen`
@@ -469,7 +469,7 @@ export default function Navbar() {
                             : `hidden`
                         )}
                       >
-                        <div className='flex flex-col gap-6 py-6 w-full px-4 h-auto bg-white z-40'>
+                        <div className='z-40 flex flex-col w-full h-auto gap-6 px-4 py-6 bg-white'>
                           <Button
                             onClick={toggleNavPrograms}
                             leftIcon={FaArrowLeftLong}
@@ -514,7 +514,7 @@ export default function Navbar() {
                             ))}
                           </div>
 
-                          <div className='w-full h-auto flex flex-col items-center rounded-xl pb-8'>
+                          <div className='flex flex-col items-center w-full h-auto pb-8 rounded-xl'>
                             <div className='grid grid-flow-row gap-4'>
                               {/* {scholarshipOpen &&
                                 SCHOLARSHIP_FAIR_CARD_DATA.map((e, index) => (
@@ -552,12 +552,12 @@ export default function Navbar() {
               {/* <li>
                 <UnstyledLink
                   href='/product'
-                  className='flex hover:bg-gray-100 rounded-lg hover:text-primary-bluegreen'
+                  className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
                 >
                   <Typography
                     color='inline'
                     variant='bt'
-                    className=' py-4 pl-4'
+                    className='py-4 pl-4 '
                   >
                     Produk Kami
                   </Typography>
@@ -566,12 +566,12 @@ export default function Navbar() {
               <li>
                 <UnstyledLink
                   href='/mentors'
-                  className='flex hover:bg-gray-100 rounded-lg hover:text-primary-bluegreen'
+                  className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
                 >
                   <Typography
                     color='inline'
                     variant='bt'
-                    className=' py-4 pl-4'
+                    className='py-4 pl-4 '
                   >
                     Mentors
                   </Typography>
@@ -580,12 +580,12 @@ export default function Navbar() {
               <li>
                 <UnstyledLink
                   href='/scholarship-info'
-                  className='flex hover:bg-gray-100 rounded-lg hover:text-primary-bluegreen'
+                  className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
                 >
                   <Typography
                     color='inline'
                     variant='bt'
-                    className=' py-4 pl-4'
+                    className='py-4 pl-4 '
                   >
                     Info Beasiswa
                   </Typography>
@@ -595,12 +595,12 @@ export default function Navbar() {
                 <li>
                   <UnstyledLink
                     href='/admin'
-                    className='flex hover:bg-gray-100 rounded-lg hover:text-primary-bluegreen'
+                    className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
                   >
                     <Typography
                       color='inline'
                       variant='bt'
-                      className=' py-4 pl-4'
+                      className='py-4 pl-4 '
                     >
                       Dashboard
                     </Typography>
@@ -610,12 +610,12 @@ export default function Navbar() {
                 <li>
                   <UnstyledLink
                     href='/dashboard'
-                    className='flex hover:bg-gray-100 rounded-lg hover:text-primary-bluegreen'
+                    className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
                   >
                     <Typography
                       color='inline'
                       variant='bt'
-                      className=' py-4 pl-4'
+                      className='py-4 pl-4 '
                     >
                       Dashboard
                     </Typography>
@@ -633,7 +633,7 @@ export default function Navbar() {
                     size='base'
                     variant='primary'
                     isOutline={false}
-                    className='hover:bg-transparent py-4 hover:text-primary-bluegreen'
+                    className='py-4 hover:bg-transparent hover:text-primary-bluegreen'
                   >
                     <Typography color='inline' variant='bt'>
                       Daftar
@@ -644,7 +644,7 @@ export default function Navbar() {
                     size='base'
                     variant='primary'
                     isOutline={true}
-                    className='hover:bg-primary-bluegreen py-4 hover:text-white'
+                    className='py-4 hover:bg-primary-bluegreen hover:text-white'
                   >
                     <Typography color='inline' variant='bt'>
                       Masuk
@@ -652,12 +652,12 @@ export default function Navbar() {
                   </ButtonLink>
                 </>
               ) : (
-                <Menu as='div' className=' w-full'>
+                <Menu as='div' className='w-full '>
                   <Menu.Button className='ring ring-primary-bluegreen w-full font-semibold rounded-md md:rounded-lg py-1.5 px-[14px]'>
                     {() => (
                       <div className='flex w-full h-[42px] py-2 px-4 justify-start items-center gap-2 text-primary-bluegreen cursor-pointer'>
                         <HiUserCircle className='w-6 h-6' />
-                        <span className='font-semibold text-lg'>
+                        <span className='text-lg font-semibold'>
                           Hai, {user?.name}!
                         </span>
                       </div>
@@ -675,17 +675,17 @@ export default function Navbar() {
                     <Menu.Items className='relative z-20 w-full flex flex-col py-4 px-2 mt-[14px] gap-2 bg-white rounded-md md:rounded-lg'>
                       {/* <Menu.Item
                         as='button'
-                        className='w-full flex py-2 px-4 justify-start items-center gap-2  text-primary-bluegreen cursor-pointer font-semibold text-lg'
+                        className='flex items-center justify-start w-full gap-2 px-4 py-2 text-lg font-semibold cursor-pointer text-primary-bluegreen'
                         onClick={() => router.push('/profile-user')}
                       >
                         Profil Saya
                       </Menu.Item> */}
                       <Menu.Item
                         as='button'
-                        className='w-full flex py-2 px-4 justify-start items-center gap-2  hover:text-rose-600 border-2 rounded-lg text-rose-800  hover:bg-rose-200 border-rose-200 cursor-pointer font-semibold text-lg'
+                        className='flex items-center justify-start w-full gap-2 px-4 py-2 text-lg font-semibold border-2 rounded-lg cursor-pointer hover:text-rose-600 text-rose-800 hover:bg-rose-200 border-rose-200'
                         onClick={handleLogout}
                       >
-                        <span className='font-semibold text-lg'>Log out</span>
+                        <span className='text-lg font-semibold'>Log out</span>
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
@@ -699,7 +699,7 @@ export default function Navbar() {
           variant='unstyled'
           icon={MdClose}
           size='lg'
-          className='border-primary-bluegreen border-2 bg-transparent rounded-full'
+          className='bg-transparent border-2 rounded-full border-primary-bluegreen'
           iconClassName='text-primary-bluegreen'
           onClick={toggleShowNav}
         />

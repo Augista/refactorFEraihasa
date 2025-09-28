@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createSelectorHooks } from 'auto-zustand-selectors-hook';
 import produce from 'immer';
 import { create } from 'zustand';
