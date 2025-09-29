@@ -78,7 +78,7 @@ const requirement = data?.data.data as BeasiswaDetail['requirement'];
           </div>
 
           {/* Banner Desktop */}
-          <div className='banner lg:h-[352px] lg:mt-11 relative hidden xl:block after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-transparent after:to-[#ffa500] after:opacity-100'>
+         <div className='banner lg:h-[352px] lg:mt-11 relative hidden xl:block after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-transparent after:to-[#ffa500] after:opacity-100'>
             <NextImage
               src={
                 scholarship?.img_path
@@ -91,18 +91,18 @@ const requirement = data?.data.data as BeasiswaDetail['requirement'];
               className='relative object-cover'
             />
             <div className='absolute translate-x-1/2 -translate-y-1/2 top-1/2 right-1/2'>
-              <div className='flex flex-col items-center'>
-                <div className='py-4 px-16 bg-[#E62A3A] rounded rounded-b-none'>
+              <div className='flex flex-col items-center w-full max-w-[90%]'>
+                <div className='py-4 px-8 md:px-16 bg-[#E62A3A] rounded rounded-b-none w-full text-center'>
                   <Typography
                     variant='h1'
                     weight='bold'
-                    className='!text-white text-[56px] text-shadow-lg whitespace-nowrap'
+                    className='!text-white text-[32px] md:text-[56px] text-shadow-lg break-words text-center leading-tight'
                   >
                     {scholarship?.nama}
                   </Typography>
                 </div>
                 <div className='py-4 w-3/4 bg-[#FFFFFF4F] text-center'>
-                  <Typography variant='p' weight='regular' className='text-[#F5F5F5]'>
+                  <Typography variant='p' weight='bold' className='text-[#000000]'>
                     {scholarship?.penyelenggara}
                   </Typography>
                 </div>
