@@ -3,21 +3,20 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-RUN npm install -g pnpm
+# Enable pnpm via corepack (lebih aman daripada npm i -g pnpm)
+RUN corepack enable
 
-# Copy manifest files
+# Copy manifest files only
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile --ignore-scripts
 
-# Copy source files explicitly
+# Install deps (include devDependencies for build)
+RUN pnpm install --force --ignore-scripts
+
+# Copy source code
 COPY . .
 
-# Ensure public/images is included
-COPY public ./public
-
 # Build Next.js app
-RUN pnpm build
-
+RUN pnpm build --no-lint
 # ========== Runner ==========
 FROM node:20-alpine AS runner
 
@@ -25,15 +24,18 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_PUBLIC_BACKEND_API_URL=http://api.raihasa.id
 
-# Install sharp dependencies for Next.js image optimization (optional)
+# Install runtime deps (sharp/vips for next/image)
 RUN apk add --no-cache libc6-compat vips-dev
 
-# Copy only what is needed from builder
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/pnpm-lock.yaml ./
+# Copy only production files
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/node_modules ./node_modules
+
+# Install only production deps
+RUN corepack enable && pnpm install --prod --force --ignore-scripts
+
 
 EXPOSE 3000
-CMD ["npm", "run", "start"]
+CMD ["pnpm", "start"]

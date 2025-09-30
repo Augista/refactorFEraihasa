@@ -68,7 +68,7 @@ export default function CardRekomendasi(props: CardRekomendasiProps) {
           >
             {disabled && (
               <div className='absolute w-full h-full bg-[#8E8E8E] bg-opacity-50 backdrop-blur rounded-2xl flex items-center justify-center z-10'>
-                <div className='m-auto flex flex-col gap-8 items-center justify-center rounded-lg'>
+                <div className='flex flex-col items-center justify-center gap-8 m-auto rounded-lg'>
                   <NextImage
                     src='/images/rekomendasi/lock-closed.png'
                     alt='Lock Icon'
@@ -81,8 +81,8 @@ export default function CardRekomendasi(props: CardRekomendasiProps) {
                 </div>
               </div>
             )}
-            <div className='flex h-full justify-between flex-col gap-4 w-full '>
-              <div className='flex flex-col gap-2 w-full text-left'>
+            <div className='flex flex-col justify-between w-full h-full gap-4 '>
+              <div className='flex flex-col w-full gap-2 text-left'>
                 <Typography
                   className='text-primary-blue text-[20px] line-clamp-2'
                   weight='bold'
@@ -120,9 +120,9 @@ export default function CardRekomendasi(props: CardRekomendasiProps) {
                   >
                     Deadline
                   </Typography>
-                  <div className='px-3 py-1 bg-primary-orange rounded-lg'>
+                  <div className='px-3 py-1 rounded-lg bg-primary-orange'>
                     <Typography
-                      className='text-white text-[12px] text-center'
+                      className='text-black text-[12px] text-center'
                       weight='medium'
                       variant='c2'
                     >
@@ -133,14 +133,14 @@ export default function CardRekomendasi(props: CardRekomendasiProps) {
               )}
               <Link href={`/rekomendasi-beasiswa/detail/${props.id}`}>
                 <div className='px-3 py-1 bg-primary-blue hover:bg-[#10586E] transition-all duration-300 rounded-lg'>
-                  <Typography
-                    className='text-white text-[12px] text-center'
-                    weight='medium'
-                    variant='c2'
-                  >
-                    Lihat Detail
-                  </Typography>
-                </div>
+              <Typography
+                className='text-[#10586E] hover:text-white text-[12px] text-center transition-colors duration-300'
+                weight='medium'
+                variant='c2'
+              >
+                Lihat Detail
+              </Typography>
+            </div>
               </Link>
             </div>
           </div>
@@ -150,7 +150,7 @@ export default function CardRekomendasi(props: CardRekomendasiProps) {
         <div className='p-6 md:p-8 flex flex-col gap-6 bg-white rounded-2xl max-w-[354px] min-h-[200px] w-full drop-shadow-lg items-center justify-start mx-auto'>
           {disabled && (
             <div className='absolute w-full h-full bg-[#8E8E8E] bg-opacity-50 backdrop-blur rounded-2xl flex items-center justify-center z-10'>
-              <div className='m-auto flex flex-col gap-8 items-center justify-center rounded-lg'>
+              <div className='flex flex-col items-center justify-center gap-8 m-auto rounded-lg'>
                 <NextImage
                   src='/images/rekomendasi/lock-closed.png'
                   alt='Lock Icon'
@@ -163,8 +163,8 @@ export default function CardRekomendasi(props: CardRekomendasiProps) {
               </div>
             </div>
           )}
-          <div className='flex flex-col gap-4 w-full'>
-            <div className='flex flex-col gap-2 w-full text-left'>
+          <div className='flex flex-col w-full gap-4'>
+            <div className='flex flex-col w-full gap-2 text-left'>
               <Typography
                 className='text-primary-blue text-[20px]'
                 weight='bold'
@@ -202,7 +202,7 @@ export default function CardRekomendasi(props: CardRekomendasiProps) {
                 >
                   Deadline
                 </Typography>
-                <div className='px-3 py-1 bg-primary-orange rounded-lg'>
+                <div className='px-3 py-1 rounded-lg bg-primary-orange'>
                   <Typography
                     className='text-white text-[12px] text-center'
                     weight='medium'
@@ -218,7 +218,7 @@ export default function CardRekomendasi(props: CardRekomendasiProps) {
             href={`/rekomendasi-beasiswa/detail/${props.id}`}
             className='w-full'
           >
-            <Button className='w-full rounded-lg font-normal'>
+            <Button className='w-full font-normal rounded-lg'>
               Lihat Detail
             </Button>
           </Link>

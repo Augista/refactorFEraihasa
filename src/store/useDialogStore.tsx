@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { createSelectorHooks } from 'auto-zustand-selectors-hook';
-import produce from 'immer';
+import { produce } from 'immer';
 import { create } from 'zustand';
 
 import { DialogOptions } from '@/components/dialog/BaseDialog';

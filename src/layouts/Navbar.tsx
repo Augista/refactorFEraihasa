@@ -247,20 +247,22 @@ export default function Navbar() {
                 </Typography>
               </UnstyledLink>
             </li>
-            <li>
-              <UnstyledLink
-                href='/scholarship-info'
-                className='flex p-2.5 hover:text-primary-bluegreen hover:bg-gray-100 rounded-lg'
-              >
-                <Typography
-                  color='inline'
-                  variant='bt'
-                  className='hover:text-primary-bluegreen'
+          {isLogin && (
+              <li>
+                <UnstyledLink
+                  href='/scholarship-info'
+                  className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
                 >
-                  Info Beasiswa
-                </Typography>
-              </UnstyledLink>
-            </li>
+                  <Typography
+                    color='inline'
+                    variant='bt'
+                    className='py-4 pl-4'
+                  >
+                    Info Beasiswa
+                  </Typography>
+                </UnstyledLink>
+              </li>
+            )}
 
             <div className='flex flex-row gap-4'>
               {!isLogin ? (
@@ -292,6 +294,7 @@ export default function Navbar() {
                 <Menu as='div' className='relative z-20 w-fit'>
                   <Menu.Button className='ring ring-primary-bluegreen w-full font-semibold rounded-md md:rounded-lg py-1.5 px-[14px]'>
                     {() => (
+                      
                       <div className='flex w-full h-[42px] py-2 px-4 justify-center items-center gap-2 text-primary-bluegreen cursor-pointer'>
                         <HiUserCircle className='w-6 h-6' />
                         <span className='text-lg font-semibold'>
@@ -577,20 +580,22 @@ export default function Navbar() {
                   </Typography>
                 </UnstyledLink>
               </li>
-              <li>
-                <UnstyledLink
-                  href='/scholarship-info'
-                  className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
-                >
-                  <Typography
-                    color='inline'
-                    variant='bt'
-                    className='py-4 pl-4 '
+               {isLogin && (
+                <li>
+                  <UnstyledLink
+                    href='/scholarship-info'
+                    className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
                   >
-                    Info Beasiswa
-                  </Typography>
-                </UnstyledLink>
-              </li>
+                    <Typography
+                      color='inline'
+                      variant='bt'
+                      className='py-4 pl-4'
+                    >
+                      Info Beasiswa
+                    </Typography>
+                  </UnstyledLink>
+                </li>
+              )}
               {isLogin && user?.role === 'ADMIN' ? (
                 <li>
                   <UnstyledLink
@@ -652,6 +657,19 @@ export default function Navbar() {
                   </ButtonLink>
                 </>
               ) : (
+                  <>
+                  <UnstyledLink
+                    href='/scholarship-info'
+                    className='flex rounded-lg hover:bg-gray-100 hover:text-primary-bluegreen'
+                  >
+                    <Typography
+                      color='inline'
+                      variant='bt'
+                      className='py-4 pl-4'
+                    >
+                      Info Beasiswa
+                    </Typography>
+                  </UnstyledLink>
                 <Menu as='div' className='w-full '>
                   <Menu.Button className='ring ring-primary-bluegreen w-full font-semibold rounded-md md:rounded-lg py-1.5 px-[14px]'>
                     {() => (
@@ -690,6 +708,7 @@ export default function Navbar() {
                     </Menu.Items>
                   </Transition>
                 </Menu>
+                </>
               )}
             </div>
           </ul>

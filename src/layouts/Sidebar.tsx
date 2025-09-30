@@ -16,6 +16,7 @@ export default function Sidebar() {
 
   const [isBoosterOpen, setIsBoosterOpen] = useState(true);
   const [isLmsOpen, setIsLmsOpen] = useState(false);
+  const [isBeasiswaOpen, setIsBeasiswaOpen] = useState(false);
 
   const pathName = router.pathname;
 
@@ -250,6 +251,60 @@ export default function Sidebar() {
                   )}
                 >
                   Order LMS
+                </Typography>
+              </UnstyledLink>
+            </div>
+          )}
+        </div>
+         <div className='h-[1px] my-3 w-full bg-[#111111]/15' />
+        <div>
+          <div
+            className='flex gap-4 items-center hover:cursor-pointer'
+            onClick={() => setIsBeasiswaOpen(!isBeasiswaOpen)}
+          >
+            <FaChevronDown
+              className={clsxm(
+                'w-4 h-4 text-primary-blue transition-all',
+                isBeasiswaOpen && '-rotate-180'
+              )}
+            />
+            <Typography
+              variant='bt'
+              weight='medium'
+              className='text-primary-blue'
+            >
+              Beasiswa
+            </Typography>
+          </div>
+          {isBeasiswaOpen && (
+            <div className='mt-2 ml-4 flex flex-col gap-2'>
+              <UnstyledLink
+                href={isAdmin ? `/rekomendasi-beasiswa` : `/rekomendasi-beasiswa`}
+                className={clsxm(
+                  'py-2 px-3 flex items-center gap-2 rounded-md',
+                  (pathName === '/rekomendasi-beasiswa' ||
+                    pathName === '/rekomendasi-beasiswa') &&
+                    'bg-primary-blue'
+                )}
+              >
+                <HiBookOpen
+                  className={clsxm(
+                    'w-6 h-6',
+                    pathName === '/rekomendasi-beasiswa' || pathName === '/rekomendasi-beasiswa'
+                      ? 'text-white'
+                      : 'text-primary-blue'
+                  )}
+                />
+                <Typography
+                  variant='bt'
+                  weight='medium'
+                  className={clsxm(
+                    pathName === '/rekomendasi-beasiswa' || pathName === '/rekomendasi-beasiswa'
+                      ? 'text-white'
+                      : 'text-primary-blue'
+                  )}
+                >
+                  Rekomendasi Beasiswa
                 </Typography>
               </UnstyledLink>
             </div>

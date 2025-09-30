@@ -14,32 +14,7 @@ const nextConfig: NextConfig = {
     return config
   },
   images: {
-  remotePatterns: [
-    {
-      protocol: 'https',
-      hostname: 'sch.sgp1.cdn.digitaloceanspaces.com',
-    },
-    {
-      protocol: 'https',
-      hostname: 'res.cloudinary.com',
-    },
-    {
-      protocol: 'https',
-      hostname: 'drive.google.com',
-    },
-    {
-      protocol: 'https',
-      hostname: 'dev-api.raihasa.id',
-    },
-    {
-      protocol: 'https',
-      hostname: 'api.raihasa.id',
-    },
-  ],
-  deviceSizes: [640, 768, 1024, 1280, 1600],
-  imageSizes: [16, 32, 48, 64, 96],
-  formats: ['image/webp'],
-  qualities: [75, 100],
+  unoptimized: true,
 },
   pageExtensions: ["page.tsx", "page.ts", "api.ts"],
   reactStrictMode: true,
