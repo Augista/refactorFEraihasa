@@ -1,6 +1,44 @@
 @import "tailwindcss";
 
+@theme {
+  --color-neutral-100: #121212;
+  --color-black-100: #1c1c1c;
+  --color-black-200: #000000;
+  --color-navajowhite: #ffd8a5;
+  --color-secondary: #fb991a;
+  --color-grey: #a6a6a6;
+  --color-white: #ffffff;
+  --color-lightblue: #92c9da;
+  --color-darkslategray: #272d4e;
+  --color-pink: #ffc1b8;
+  --color-red: #cd3c3c;
+  --color-wheat: #ffe0b8;
 
+  /* Primary group */
+  --color-primary-blue: #1b7691;
+  --color-primary-typo: #333333;
+  --color-primary-light: #f5f5f5;
+  --color-primary-bluegreen: #1b7691;
+  --color-primary-white: #ffffff;
+  --color-primary-yellow: #ffd600;
+  --color-primary-orange: #fb991a;
+
+  /* Font */
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
+
+  /* Shadow */
+  --shadow-20: 0px 0.5px 2px rgba(65, 78, 98, 0.12),
+               0px 0px 1px rgba(65, 78, 98, 0.05);
+  --shadow-40: 0px 2px 4px rgba(65, 78, 98, 0.12),
+               0px 0px 1px rgba(65, 78, 98, 0.05);
+  --shadow-60: 0px 4px 8px rgba(65, 78, 98, 0.12),
+               0px 0px 1px rgba(65, 78, 98, 0.05);
+  --shadow-80: 0px 8px 16px rgba(65, 78, 98, 0.12),
+               0px 0px 1px rgba(65, 78, 98, 0.05);
+  --shadow-100: 0px 16px 24px rgba(65, 78, 98, 0.12),
+                0px 0px 1px rgba(65, 78, 98, 0.05);
+}
 
 @font-face {
   font-family: 'Poppins';

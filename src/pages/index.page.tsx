@@ -66,17 +66,20 @@ export default function Home() {
                 cita-citamu!
               </Typography>
               <ButtonLink
-                href='/rekomendasi-beasiswa'
-                data-aos='zoom-in'
-                data-aos-delay='600'
-                variant='primary'
-                size='lg'
-                className='max-w-sm px-5 mt-4 md:mt-8 font-poppins'
-              >
-                <Typography className='flex items-center gap-2'>
-                  Ambil Kesempatan Sekarang <FaArrowRightLong />{' '}
-                </Typography>
-              </ButtonLink>
+                  href='/rekomendasi-beasiswa'
+                  data-aos='zoom-in'
+                  data-aos-delay='600'
+                  variant='primary'
+                  size='lg'
+                  className='max-w-sm px-5 mt-4 md:mt-8 font-poppins'
+                >
+                  <Typography
+                    className='flex items-center w-full gap-2 px-4 py-3 text-base font-semibold text-white transition-colors duration-300 bg-[#1B7691] rounded-2xl hover:bg-yellow-400 hover:text-white'
+                  >
+                    Ambil Kesempatan Sekarang <FaArrowRightLong />
+                  </Typography>
+                </ButtonLink>
+
             </div>
 
             <NextImage

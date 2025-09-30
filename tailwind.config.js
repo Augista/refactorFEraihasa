@@ -1,11 +1,13 @@
-const { heroui } = require('@heroui/react');
 const { fontFamily } = require('tailwindcss/defaultTheme');
+const { heroui } = require('@heroui/react');
 
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    './src/**/*.{js,ts,jsx,tsx}',
-
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -14,10 +16,6 @@ export default {
         secondary: ['Roboto', ...fontFamily.sans],
       },
       colors: {
-        // gray: {
-        //   100: '#fffefd',
-        //   200: 'rgba(255, 255, 255, 0.32)',
-        // },
         neutral: {
           100: '#121212',
         },
@@ -54,5 +52,8 @@ export default {
     },
   },
   darkMode: 'class',
-  plugins: [require('@tailwindcss/forms'), heroui()],
+  plugins: [
+    require('@tailwindcss/forms'),
+    heroui(),
+  ],
 };

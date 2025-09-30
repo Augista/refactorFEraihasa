@@ -132,15 +132,15 @@ export default function CardRekomendasi(props: CardRekomendasiProps) {
                 </div>
               )}
               <Link href={`/rekomendasi-beasiswa/detail/${props.id}`}>
-                <div className='px-3 py-1 bg-primary-blue hover:bg-[#10586E] transition-all duration-300 rounded-lg'>
-              <Typography
-                className='text-[#10586E] hover:text-white text-[12px] text-center transition-colors duration-300'
-                weight='medium'
-                variant='c2'
-              >
-                Lihat Detail
-              </Typography>
-            </div>
+               <div className='px-3 py-1 bg-primary-blue hover:bg-[#10586E] transition-all duration-300 rounded-lg'>
+                  <Typography
+                    className='text-white text-[12px] text-center'
+                    weight='medium'
+                    variant='c2'
+                  >
+                    Lihat Detail
+                  </Typography>
+                </div>
               </Link>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function CardRekomendasi(props: CardRekomendasiProps) {
             </div>
             {props.is_open && (
               <div className='flex items-center justify-center gap-4 '>
-                <Typography
+               <Typography
                   className='text-[#37384C] text-[16px]'
                   weight='medium'
                   variant='bt'
